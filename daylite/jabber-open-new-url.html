@@ -1,0 +1,36 @@
+<html>
+<head>
+<script type="text/javascript">
+function OnTelephonyConversationStateChanged(json) {
+	try {
+		var conversation = JSON.parse(json);
+		if (conversation.state == "Started" && conversation.acceptanceState == "Pending" && conversation.remoteParticipants[0].voiceMediaState == "Pending"){
+			search_number = conversation.remoteParticipants[0].voiceMediaNumber;
+			url = 'https://www.google.com/search?q=' + search_number 
+			window.open(url);
+			msg0 = "Searching Google.com for the number: " + search_number; 
+			msg1 = 'Search URL is: ' + url;
+			msg2 = '<a target="_blank" href="' + url + '">Click here to search</a>'
+			
+			msg = msg0 + '<br>' + msg1 + '<br>' + msg2;
+ 
+	
+			document.getElementById('search_details').innerHTML = msg 			
+		}
+	}
+	catch(e) {
+		console.log("cannot parse conversation:" + e.message);
+	}
+}
+</script>
+</head>
+<h1>Daylite Call Search Test Page</h1>
+<p id="search_details"></p>
+
+<br>
+<br>
+
+
+
+</body>
+</html>

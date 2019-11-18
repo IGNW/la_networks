@@ -1,0 +1,20 @@
+<config version="1.0">
+    <Client>
+        <jabber-plugin-config>
+            <browser-plugin>
+                <page refresh="true" preload="true">
+                    <tooltip>Cisco</tooltip>
+                    <icon>http://www.cisco.com/web/fw/i/logo.gif</icon>
+                    <url>www.cisco.com</url>
+                </page>
+            </browser-plugin>
+        </jabber-plugin-config>
+    </Client>
+    <Options>
+        <Set_Status_Inactive_Timeout>20</Set_Status_Inactive_Timeout>
+        <StartCallWithVideo>false</StartCallWithVideo>
+    </Options>
+    <Policies>
+        <Disallowed_File_Transfer_Types>.exe;.msi</Disallowed_File_Transfer_Types>
+    </Policies>
+</config>

@@ -1,0 +1,60 @@
+<html>
+<head>
+<script type="text/javascript">
+function OnTelephonyConversationStateChanged(json) {
+	console.log("OnTelephonyConversationStateChanged");
+	try {
+		var conversation = JSON.parse(json);
+		document.getElementById('state').innerHTML = "conversation state=" + conversation.state;
+		document.getElementById('acceptanceState').innerHTML = "conversation acceptanceState=" + conversation.acceptanceState
+		document.getElementById('callType').innerHTML = "conversation callType=" + conversation.callType;
+		for (var i=0; i<conversation.remoteParticipants.length; i++) {
+			console.log("conversation remoteParticipants[" + i + "]=");
+			document.getElementById('voiceMediaDisplayName0').innerHTML = "voiceMediaDisplayName=" + conversation.remoteParticipants[i].voiceMediaDisplayName;
+			document.getElementById('voiceMediaNumber0').innerHTML = "voiceMediaNumber=" + conversation.remoteParticipants[i].voiceMediaNumber;
+			document.getElementById('translatedNumber0').innerHTML = "translatedNumber=" + conversation.remoteParticipants[i].translatedNumber;
+			document.getElementById('voiceMediaPhoneType0').innerHTML = "voiceMediaPhoneType=" + conversation.remoteParticipants[i].voiceMediaPhoneType;
+			document.getElementById('voiceMediaState0').innerHTML = "voiceMediaState=" + conversation.remoteParticipants[i].voiceMediaState;
+		}
+		console.log("conversation localParticipant=");
+		document.getElementById('voiceMediaDisplayName').innerHTML = "  voiceMediaDisplayName=" + conversation.localParticipant.voiceMediaDisplayName;
+		document.getElementById('voiceMediaNumber').innerHTML = "  voiceMediaNumber=" + conversation.localParticipant.voiceMediaNumber;
+		document.getElementById('translatedNumber').innerHTML = "  translatedNumber=" + conversation.localParticipant.translatedNumber;
+		document.getElementById('voiceMediaPhoneType').innerHTML = "  voiceMediaPhoneType=" + conversation.localParticipant.voiceMediaPhoneType;
+		document.getElementById('voiceMediaState').innerHTML = "  voiceMediaState=" + conversation.localParticipant.voiceMediaState;
+	}
+	catch(e) {
+		console.log("cannot parse conversation:" + e.message);
+	}
+}
+</script>
+</head>
+<body>
+
+<h1>Daylite Call State Test Page</h1>
+<br>
+<h2>Call State</h2>
+<p id="state"></p>
+<p id="acceptanceState"></p>
+<p id="callType"></p>
+<br>
+<br>
+
+<h2>Remote Party Details</h2>
+<p id="voiceMediaDisplayName0"></p>
+<p id="voiceMediaNumber0"></p>
+<p id="translatedNumber0"></p>
+<p id="voiceMediaPhoneType0"></p>
+<p id="voiceMediaState0"></p>
+
+
+<h2>Local Party Details</h2>
+<p id="voiceMediaDisplayName"></p>
+<p id="voiceMediaNumber"></p>
+<p id="translatedNumber"></p>
+<p id="voiceMediaPhoneType"></p>
+<p id="voiceMediaState"></p>
+
+
+</body>
+</html>
