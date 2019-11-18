@@ -45,6 +45,10 @@ https://support.google.com/chrome/thread/14194567?hl=en
 
 <hr>
 
+## Jabber Config File
+The `jabber-config.xml` file is loaded into the root of all the CUCM TFTP servers.  In that file, all the Custom Tabs that need to be deployed can be defined and each Jabber client will download the file the next time it launches.
+
+
 ## Useful Links
 ### Jabber Parameters Reference (options for the jabber-config.xml file)
 https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/jabber/12_7/cjab_b_parameter-reference-guide-jabber-127.html
