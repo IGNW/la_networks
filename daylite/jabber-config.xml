@@ -5,7 +5,7 @@
             <browser-plugin>
                 <page refresh="true" preload="true">
                     <tooltip>Daylite</tooltip>
-                    <icon></icon>
+                    <icon>https://ciscodayliteblob.blob.core.windows.net/$web/io_icon.png</icon>
                     <url>https://ciscodayliteblob.blob.core.windows.net/$web/Cisco_DL_modified.html</url>
                 </page>
             </browser-plugin>
